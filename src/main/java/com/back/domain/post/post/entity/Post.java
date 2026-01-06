@@ -2,6 +2,7 @@ package com.back.domain.post.post.entity;
 
 import com.back.domain.member.member.entity.Member;
 import com.back.domain.post.postComment.entity.PostComment;
+import com.back.global.exception.ServiceException;
 import com.back.global.jpa.entity.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -59,4 +60,15 @@ public class Post extends BaseEntity {
 
         return comments.remove(postComment);
     }
+
+    public void checkActorCanModify(Member actor) {
+        if (!author.equals(actor))
+            throw new ServiceException("403-1", "댓글 수정 권한이 없습니다.");
+    }
+
+    public void checkActorCanDelete(Member actor) {
+        if (!author.equals(actor))
+            throw new ServiceException("403-2", "댓글 삭제 권한이 없습니다.");
+    }
+
 }
