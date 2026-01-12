@@ -45,8 +45,8 @@ public class Member extends BaseEntity {
     }
 
     public boolean isAdmin() {
-        if("system".equals(username)) return true;
-        if("admin".equals(username)) return true;
+        if ("system".equals(username)) return true;
+        if ("admin".equals(username)) return true;
 
         return false;
     }

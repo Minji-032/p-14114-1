@@ -70,5 +70,4 @@ public class Post extends BaseEntity {
         if (!author.equals(actor))
             throw new ServiceException("403-2", "%d번 글 삭제권한이 없습니다.".formatted(getId()));
     }
-
 }

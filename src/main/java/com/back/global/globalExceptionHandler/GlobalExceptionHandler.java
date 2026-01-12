@@ -34,6 +34,7 @@ public class GlobalExceptionHandler {
         );
     }
 
+
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<RsData<Void>> handle(ConstraintViolationException ex) {
         String message = ex.getConstraintViolations()

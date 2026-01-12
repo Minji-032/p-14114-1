@@ -40,4 +40,3 @@ public class ResponseAspect {
         return proceed;
     }
 }
-

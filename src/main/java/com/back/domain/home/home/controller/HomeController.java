@@ -43,7 +43,7 @@ public class HomeController {
                     console.log(data);
                     console.log(data[1].title);
                   });
-                  
+                
                 fetch("/api/v1/posts/1")
                   .then(response => response.json())
                   .then(data => {

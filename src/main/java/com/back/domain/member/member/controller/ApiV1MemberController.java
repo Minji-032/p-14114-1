@@ -116,7 +116,7 @@ public class ApiV1MemberController {
 
 
     @GetMapping("/me")
-    public MemberWithUsernameDto  me() {
+    public MemberWithUsernameDto me() {
         Member actor = memberService
                 .findById(rq.getActor().getId())
                 .get();

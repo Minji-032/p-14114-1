@@ -29,7 +29,7 @@ public class ApiV1AdmMemberController {
     public List<MemberWithUsernameDto> getItems() {
         Member actor = rq.getActor();
 
-        if(!actor.isAdmin())
+        if (!actor.isAdmin())
             throw new ServiceException("403-1", "권한이 없습니다.");
 
         List<Member> members = memberService.findAll();
@@ -40,10 +40,12 @@ public class ApiV1AdmMemberController {
     }
 
     @GetMapping("/{id}")
-    public MemberWithUsernameDto getItem(@PathVariable int id) {
+    public MemberWithUsernameDto getItem(
+            @PathVariable int id
+    ) {
         Member actor = rq.getActor();
 
-        if(!actor.isAdmin())
+        if (!actor.isAdmin())
             throw new ServiceException("403-1", "권한이 없습니다.");
 
         Member member = memberService.findById(id).get();
